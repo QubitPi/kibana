@@ -43,6 +43,14 @@ a Kibana instance with a secured Elasticsearch cluster.</p>
 <pre class="programlisting prettyprint lang-shell">bin/kibana-verification-code
 [-V, --version] [-h, --help]</pre>
 </div>
+<div class="important admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Running as root</h3>
+<p>If Kibana was installed using the deb or rpm package then run
+<code class="literal">/usr/share/kibana/bin/kibana-verification-code</code> as <code class="literal">root</code></p>
+</div>
+</div>
 <h4><a id="_description"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/kibana/edit/master/docs/user/commands/kibana-verification-code.asciidoc">edit</a></h4>
 <p>Use this command to retrieve a verification code for Kibana. You enter this code
 in Kibana when manually configuring a secure connection with an Elasticsearch cluster.

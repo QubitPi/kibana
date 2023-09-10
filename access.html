@@ -120,6 +120,21 @@
 <h2 class="title"><a id="access"></a>Access Kibana<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/kibana/edit/master/docs/setup/access.asciidoc">edit</a></h2>
 </div></div></div>
 <p>The fastest way to access Kibana is to use our hosted Elasticsearch Service. If you <a class="xref" href="install.html" title="Install Kibana">installed Kibana on your own</a>, access Kibana through the web application.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>In the case of <a class="xref" href="install.html" title="Install Kibana">installing Kibana on our own</a>, we need to modify Kibana config so that we can visit Kibana UI
+from our another machine</p>
+<div class="pre_wrapper lang-sh">
+<pre class="programlisting prettyprint lang-sh">sudo nano /etc/kibana/kibana.yml</pre>
+</div>
+<p>Find the line starting with <code class="literal">#server.host</code> and <a href="https://serverfault.com/a/1050221" class="ulink" target="_top">change that line to</a></p>
+<div class="pre_wrapper lang-yaml">
+<pre class="programlisting prettyprint lang-yaml">server.host: "0.0.0.0"</pre>
+</div>
+<p>Then we could visit the Kibana-hosting machine anywhere from <code class="literal">http://server-ip:5601</code></p>
+</div>
+</div>
 <h3><a id="_set_up_on_cloud"></a>Set up on cloud<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/kibana/edit/master/docs/setup/access.asciidoc">edit</a></h3>
 <p>There&#8217;s no faster way to get started than with our hosted Elasticsearch Service on Elastic Cloud:</p>
 <div class="olist orderedlist">

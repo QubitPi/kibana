@@ -92,10 +92,28 @@ Certificates and keys for TLS are generated for the transport and HTTP layer, an
 </ul>
 </div>
 <p>The password and certificate and keys are output to your terminal.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>If Kibana was in stalled via <a class="xref" href="deb.html#deb-repo" title="Install from the APT repository">APT repository</a>, the security configuration, including the password, above
+<span class="strong strong"><strong>won&#8217;t be initiated</strong></span>.</p>
+<p>To get the password for the user <code class="literal">elastic</code> for login, please do this in
+<a href="https://discuss.elastic.co/t/where-is-the-kibana-password-set/261577/2" class="ulink" target="_top">elasticsearch</a> by following referring to
+<a href="https://qubitpi.github.io/elasticsearch/deb.html#deb-running-systemd" class="ulink" target="_top">this section</a></p>
+</div>
+</div>
 <p>You can then generate an enrollment token for Kibana with the
 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/create-enrollment-token.html" class="ulink" target="_top"><code class="literal">elasticsearch-create-enrollment-token</code></a> tool:</p>
 <div class="pre_wrapper lang-sh">
 <pre class="programlisting prettyprint lang-sh">bin/elasticsearch-create-enrollment-token -s kibana</pre>
+</div>
+<div class="important admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Running as root</h3>
+<p>If Kibana was installed using the deb or rpm package then run
+<code class="literal">/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana</code> as <code class="literal">root</code></p>
+</div>
 </div>
 <p>Start Kibana and enter the enrollment token to securely connect Kibana with Elasticsearch.</p>
 </div>
