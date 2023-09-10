@@ -3,6 +3,27 @@
 
 The fastest way to access {kib} is to use our hosted {es} Service. If you <<install, installed {kib} on your own>>, access {kib} through the web application.
 
+[NOTE]
+====
+
+In the case of <<install, installing {kib} on our own>>, we need to modify Kibana config so that we can visit Kibana UI
+from our another machine
+
+[source,sh]
+--------------------------------
+sudo nano /etc/kibana/kibana.yml
+--------------------------------
+
+Find the line starting with `#server.host` and https://serverfault.com/a/1050221[change that line to]
+
+[source,yaml]
+--------------------------------
+server.host: "0.0.0.0"
+--------------------------------
+
+Then we could visit the Kibana-hosting machine anywhere from `http://server-ip:5601`
+====
+
 [float]
 === Set up on cloud
 

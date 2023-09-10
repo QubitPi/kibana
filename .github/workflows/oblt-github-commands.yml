@@ -20,14 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: elastic/apm-pipeline-library/.github/actions/github-token@current
-        if: github.action_repository != 'QubitPi/kibana'
         with:
           url: ${{ secrets.OBLT_VAULT_ADDR }}
           roleId: ${{ secrets.OBLT_VAULT_ROLE_ID }}
           secretId: ${{ secrets.OBLT_VAULT_SECRET_ID }}
 
       - id: is_team_member
-        if: github.action_repository != 'QubitPi/kibana'
         name: Check if user is member of the Elastic org and Observability team
         run: |
           if gh api -H "Accept: application/vnd.github+json" \
