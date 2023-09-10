@@ -13,6 +13,13 @@ bin/kibana-verification-code
 [-V, --version] [-h, --help]
 ----
 
+[IMPORTANT]
+.Running as root
+=====================
+If {kib} was installed using the deb or rpm package then run
+`/usr/share/kibana/bin/kibana-verification-code` as `root`
+=====================
+
 [discrete]
 ==== Description
 

@@ -136,6 +136,18 @@ occurs automatically:
 
 The password and certificate and keys are output to your terminal.
 
+[NOTE]
+====
+
+If {kib} was in stalled via <<deb-repo,APT repository>>, the security configuration, including the password, above
+**won't be initiated**.
+
+To get the password for the user `elastic` for login, please do this in
+https://discuss.elastic.co/t/where-is-the-kibana-password-set/261577/2[elasticsearch] by following referring to
+https://qubitpi.github.io/elasticsearch/deb.html#deb-running-systemd[this section]
+
+====
+
 You can then generate an enrollment token for {kib} with the
 {ref}/create-enrollment-token.html[`elasticsearch-create-enrollment-token`] tool:
 
@@ -143,6 +155,13 @@ You can then generate an enrollment token for {kib} with the
 ----
 bin/elasticsearch-create-enrollment-token -s kibana
 ----
+
+[IMPORTANT]
+.Running as root
+=====================
+If {kib} was installed using the deb or rpm package then run
+`/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana` as `root`
+=====================
 
 Start {kib} and enter the enrollment token to securely connect {kib} with {es}.
 
