@@ -156,6 +156,13 @@ You can then generate an enrollment token for {kib} with the
 bin/elasticsearch-create-enrollment-token -s kibana
 ----
 
+or if we are in a cloud environment, such as AWS, we https://stackoverflow.com/a/75955838[will need]
+
+[source,sh]
+----
+sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana --url "https://localhost:9200"
+----
+
 [IMPORTANT]
 .Running as root
 =====================
