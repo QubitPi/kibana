@@ -107,6 +107,10 @@ Certificates and keys for TLS are generated for the transport and HTTP layer, an
 <div class="pre_wrapper lang-sh">
 <pre class="programlisting prettyprint lang-sh">bin/elasticsearch-create-enrollment-token -s kibana</pre>
 </div>
+<p>or if we are in a cloud environment, such as AWS, we <a href="https://stackoverflow.com/a/75955838" class="ulink" target="_top">will need</a></p>
+<div class="pre_wrapper lang-sh">
+<pre class="programlisting prettyprint lang-sh">sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token --scope kibana --url "https://localhost:9200"</pre>
+</div>
 <div class="important admon">
 <div class="icon"></div>
 <div class="admon_content">
